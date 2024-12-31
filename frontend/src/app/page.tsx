@@ -12,13 +12,6 @@ const HomePage: FC<{}> = () => {
       <nav className="fixed w-full top-0 z-50 px-6 py-4 bg-[var(--color-charcoal)]/80 backdrop-blur-sm">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-[var(--color-alabaster)] text-xl">slievr</div>
-          <div className="flex gap-8 text-[var(--color-alabaster)]/80">
-            <a href="#" className="hover:text-[var(--color-alabaster)]">Home</a>
-            <a href="#" className="hover:text-[var(--color-alabaster)]">Features</a>
-            <a href="#" className="hover:text-[var(--color-alabaster)]">Resources</a>
-            <a href="#" className="hover:text-[var(--color-alabaster)]">Blog</a>
-            <a href="#" className="hover:text-[var(--color-alabaster)]">Pricing</a>
-          </div>
         </div>
       </nav>
 
