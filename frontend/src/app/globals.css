@@ -1,21 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-alabaster: #fafafa;
+  --color-tufts-blue: #2196f3;
+  --color-salmon: #ff7e6b;
+  --color-charcoal: #1f2427;
+  --color-spring-green: #0cf574;
+  --font-fira: 'Fira Mono', monospace;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-alabaster);
+  color: var(--color-charcoal);
+  font-family: var(--font-fira);
+}
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .bg-gradient-45 {
+    background: linear-gradient(
+      45deg,
+      var(--color-tufts-blue),
+      var(--color-spring-green) 25%,
+      var(--color-salmon) 50%,
+      var(--color-tufts-blue) 75%,
+      var(--color-spring-green) 100%
+    );
+    background-size: 400% 400%;
+    animation: slide-rainbow 3s ease infinite;
+  }
+}
+
+@keyframes slide-rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rainbow-hover {
+  position: relative;
+  background: var(--color-charcoal);
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.rainbow-hover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    var(--color-tufts-blue),
+    var(--color-spring-green) 25%,
+    var(--color-salmon) 50%,
+    var(--color-tufts-blue) 75%,
+    var(--color-spring-green) 100%
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rainbow-hover:hover::before {
+  opacity: 0.8;
+  animation: slide-rainbow 3s ease infinite;
+}
+
+.rainbow-hover > span {
+  position: relative;
+  z-index: 2;
+}
+
+.rainbow-hover-light {
+  position: relative;
+  background: var(--color-tufts-blue);
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.rainbow-hover-light::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    var(--color-alabaster),
+    var(--color-spring-green) 25%,
+    var(--color-salmon) 50%,
+    var(--color-alabaster) 75%,
+    var(--color-spring-green) 100%
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rainbow-hover-light:hover::before {
+  opacity: 0.8;
+  animation: slide-rainbow 3s ease infinite;
+}
+
+.rainbow-hover-light > span {
+  position: relative;
+  z-index: 2;
 }
