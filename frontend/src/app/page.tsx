@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import { FC, useState } from 'react';
-import SlievrLogo from '@/components/SlievrLogo';
+import { FC, useState } from 'react'
+import SlievrLogo from '@/components/SlievrLogo'
 
-const HomePage: FC = () => {
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
+const HomePage: FC<{}> = () => {
+  const [isButtonHovered, setIsButtonHovered] = useState(false)
 
   return (
     <div className="min-h-screen bg-[var(--color-charcoal)] font-[var(--font-fira)]">
@@ -37,9 +37,9 @@ const HomePage: FC = () => {
                 <div className="h-0.5 w-12 bg-[var(--color-tufts-blue)]"></div>
                 <span className="text-xl text-[var(--color-alabaster)]/80">01</span>
               </div>
-             
+
               <div className="flex items-center gap-6">
-                <button 
+                <button
                   className="rainbow-hover px-8 py-3 rounded-lg text-lg font-bold"
                   onMouseEnter={() => setIsButtonHovered(true)}
                   onMouseLeave={() => setIsButtonHovered(false)}
@@ -54,27 +54,8 @@ const HomePage: FC = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-[var(--color-tufts-blue)]">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-[var(--color-alabaster)] mb-8">
-            ready to join{" "}
-            <span className="bg-gradient-to-r from-[var(--color-alabaster)] via-[var(--color-spring-green)] to-[var(--color-salmon)] bg-clip-text text-transparent">
-              slievr
-            </span>
-            ?
-          </h2>
-          <p className="text-[var(--color-alabaster)]/90 mb-8 max-w-2xl mx-auto">
-            Join us today and experience the difference.
-          </p>
-          <button className="rainbow-hover-light px-8 py-3 rounded-lg text-lg font-bold">
-            <span className="text-[var(--color-alabaster)]">Sign Up Now</span>
-          </button>
-        </div>
-      </section>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
